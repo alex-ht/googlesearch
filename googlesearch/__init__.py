@@ -64,8 +64,8 @@ def search(term, num_results=10, lang="en", proxy=None, advanced=False, sleep_in
             start += 1
         for result in result_block:
             # Find link, title, description
-            link = result.find("a", href=True, attrs={"class": "gs-title})
-            title = result.find("div", attrs={"class": "gs-title}).text
+            link = result.find("a", href=True, attrs={"class": "gs-title"})
+            title = result.find("div", attrs={"class": "gs-title"}).text
             description_box = result.find(
                 "div", {"class": "gs-bidi-start-align gs-snippet"})
             if description_box:
