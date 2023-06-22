@@ -56,7 +56,7 @@ def search(term, num_results=10, lang="en", proxy=None, advanced=False, sleep_in
         # Send request
         resp = _req(escaped_term, num_results - start,
                     lang, start, proxies, timeout, key)
-        print('resp.text')
+        print(resp.text)
         # Parse
         soup = BeautifulSoup(resp.text, "html.parser")
         result_block = soup.find_all("div", attrs={"class": "gs-webResult gs-result"})
