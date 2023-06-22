@@ -18,7 +18,7 @@ def _req(term, results, lang, start, proxies, timeout, key):
             "hl": lang,
             "start": start,
             "key": key,
-            "cx"='0525c4e05ea584f7c',
+            "cx": '0525c4e05ea584f7c',
         },
         proxies=proxies,
         timeout=timeout,
