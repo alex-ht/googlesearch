@@ -59,15 +59,15 @@ def search(term, num_results=10, lang="en", proxy=None, advanced=False, sleep_in
 
         # Parse
         soup = BeautifulSoup(resp.text, "html.parser")
-        result_block = soup.find_all("div", attrs={"class": "g"})
+        result_block = soup.find_all("div", attrs={"class": "gs-webResult gs-result"})
         if len(result_block) ==0:
             start += 1
         for result in result_block:
             # Find link, title, description
-            link = result.find("a", href=True)
-            title = result.find("h3")
+            link = result.find("a", href=True, attrs={"class": "gs-title})
+            title = result.find("div", attrs={"class": "gs-title}).text
             description_box = result.find(
-                "div", {"style": "-webkit-line-clamp:2"})
+                "div", {"class": "gs-bidi-start-align gs-snippet"})
             if description_box:
                 description = description_box.text
                 if link and title and description:
